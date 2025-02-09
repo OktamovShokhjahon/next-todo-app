@@ -8,32 +8,7 @@ import { useState } from "react";
 function page() {
   const [todoNumbers, setTodoNumbers] = useState<number>(0);
   const [doneNumbers, setDoneNumbers] = useState<number>(0);
-  const [todos, setTodos] = useState<TodoInterface[]>([
-    {
-      id: "1",
-      title: "Todo 1",
-      description: "Description 1",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "Todo 1",
-      description: "Description 1",
-      completed: false,
-    },
-    {
-      id: "3",
-      title: "Todo 1",
-      description: "Description 1",
-      completed: false,
-    },
-    {
-      id: "4",
-      title: "Todo 1",
-      description: "Description 1",
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState<TodoInterface[]>([]);
 
   return (
     <div>
@@ -41,7 +16,12 @@ function page() {
         Todo Page
       </h1>
 
-      <TodoInfo todoNumbers={todoNumbers} doneNumbers={doneNumbers} />
+      <TodoInfo
+        todoNumbers={todoNumbers}
+        doneNumbers={doneNumbers}
+        setTodoNumbers={setTodoNumbers}
+        setTodoItems={setTodos}
+      />
       <TodoList items={todos} />
     </div>
   );
