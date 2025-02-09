@@ -12,9 +12,16 @@ function TodoListItem({ item }: { item: TodoInterface }) {
         <p className="text-[15px] max-w-[500px]">{item.description}</p>
       </div>
       <div className="flex gap-[15px]">
-        <Trash2 stroke="red" cursor={"pointer"} />
-
-        <CircleCheck stroke="green" cursor={"pointer"} />
+        <Trash2
+          stroke="red"
+          cursor={"pointer"}
+          className="hover:scale-150 transition"
+        />
+        <CircleCheck
+          stroke="green"
+          cursor={"pointer"}
+          className="hover:scale-150 transition"
+        />
       </div>
     </div>
   );
